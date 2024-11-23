@@ -91,7 +91,6 @@ namespace SaberFactory.Game
             var baseVisualsGO = GameObject.Instantiate(HMDOnlySaber._defaultSaberPrefab, parent, false);
             var defaultSaberModelCon = baseVisualsGO.GetComponent<SaberModelController>();
             defaultSaberModelCon.SetField("_colorManager", this._colorManager);
-            defaultSaberModelCon.SetField("_initData", this._initData);
             defaultSaberModelCon.SetField("_saberLight", this._saberLight);
             SetSaberGlowColor[] setSaberGlowColors = defaultSaberModelCon.GetField<SetSaberGlowColor[], SaberModelController>("_setSaberGlowColors");
             for (int i = 0; i < setSaberGlowColors.Length; i++)
@@ -103,7 +102,7 @@ namespace SaberFactory.Game
             {
                 setSaberFakeGlowColors[i].SetField("_colorManager", this._colorManager);
             }
-            defaultSaberModelCon.Init(parent, saber);
+            defaultSaberModelCon.Init(parent, saber, _colorManager.ColorForSaberType(saber.saberType));
             baseVisualsGO.SetActive(true);
             return baseVisualsGO;
         }

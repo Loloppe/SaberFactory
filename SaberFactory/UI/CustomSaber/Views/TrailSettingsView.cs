@@ -278,7 +278,7 @@ namespace SaberFactory.UI.CustomSaber.Views
         [UIAction("edit-material")]
         private void EditMaterial()
         {
-            _materialEditor.Show(_instanceTrailData.Material);
+            // _materialEditor.Show(_instanceTrailData.Material);
         }
 
         [UIAction("revert-trail")]

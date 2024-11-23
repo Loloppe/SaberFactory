@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using BeatSaberMarkupLanguage;
@@ -75,7 +74,7 @@ namespace SaberFactory.UI.Lib
                 _bsmlCache.Add(resourceName, node);
             }
 
-            return BSMLParser.instance.Parse(node, parent, host);
+            return BSMLParser.Instance.Parse(node.OuterXml, parent, host);
         }
 
         public BSMLParserParams ParseFromResource(string resourceName, GameObject parent, object host)
@@ -92,13 +91,13 @@ namespace SaberFactory.UI.Lib
                 _bsmlCache.Add(resourceName, node);
             }
 
-            return BSMLParser.instance.Parse(node, parent, host);
+            return BSMLParser.Instance.Parse(node.OuterXml, parent, host);
         }
 
         public BSMLParserParams ParseFromString(string content, GameObject parent, object host)
         {
             content = Process(content);
-            return BSMLParser.instance.Parse(content, parent, host);
+            return BSMLParser.Instance.Parse(content, parent, host);
         }
         
         public void ProcessDoc(XmlDocument doc)

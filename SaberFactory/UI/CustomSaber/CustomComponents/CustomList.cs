@@ -145,7 +145,7 @@ namespace SaberFactory.UI.CustomSaber.CustomComponents
 
         private void SetBgColor(Color color)
         {
-            _layoutElement.gameObject.GetComponent<Backgroundable>().background.color = color;
+            _layoutElement.gameObject.GetComponent<Backgroundable>().Background.color = color;
         }
 
         [UIAction("#post-parse")]

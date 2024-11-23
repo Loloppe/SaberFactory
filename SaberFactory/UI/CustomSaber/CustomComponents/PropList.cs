@@ -6,6 +6,7 @@ using SaberFactory.UI.Lib;
 using SaberFactory.UI.Lib.PropCells;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace SaberFactory.UI.CustomSaber.CustomComponents
 {
